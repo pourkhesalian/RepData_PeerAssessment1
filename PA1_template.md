@@ -67,7 +67,7 @@ In this section, first it is checked if the file 'activity.csv' exists, if not, 
 ```r
         hist(total.steps.daily$steps, 
              breaks = 20, 
-             xlab='steps in a day (counts)', 
+             xlab='steps in a day (count)', 
              ylab='number of days (count)')
         abline(v=mean(total.steps.daily$steps), 
                col='red', lty=2)
@@ -110,10 +110,10 @@ The **mean** is 9354 and the **median** is 10395.
 
 ```r
         plot(x=strptime(int.steps.avg$interval, format = '%H:%M:%S'), 
-             main=' average daily activity pattern',
+             main='Average daily activity pattern',
              y=int.steps.avg$int.avg,type = 'l',
              xlab = 'Time of the day, 5-minute intervals, (HH:MM)',
-             ylab = 'average staps (count)')
+             ylab = 'Average steps (count)')
         points(x=strptime(int.steps.avg$interval[which.max(int.steps.avg$int.avg)], format = '%H:%M:%S'), 
                y=int.steps.avg$int.avg[which.max(int.steps.avg$int.avg)], 
                col='red', 
@@ -169,7 +169,7 @@ The missing values are filled with the averages in the two-month period.
                 
         hist(total.steps.daily1$steps, 
              breaks = 20, 
-             xlab='steps in a day (counts)', 
+             xlab='steps in a day (count)', 
              ylab='number of days (count)')
         abline(v=mean(total.steps.daily1$steps), 
                col='red',
@@ -238,7 +238,7 @@ avg.steps.days<- activity.data1 %>%
 ggplot(data = avg.steps.days, 
        aes(x= interval, 
            y=avg.steps)) + 
-        labs(x='interval', y='Average steps', title='Average steps pattern over weekends and weedays')+
+        labs(x='Interval', y='Average steps', title='Average steps pattern over weekends and weedays')+
         geom_line()+
         facet_grid(rows = vars(days))
 ```
